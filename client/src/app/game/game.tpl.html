@@ -1,0 +1,48 @@
+<div class="row" ng-show="show">
+  <div class="col-md-12">
+    <div class="alert alert-success alert-bold-border fade in alert-dismissable" ng-model="alertMessage">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+      <p><strong>Todo salió bien! :)</strong></p>
+      <p class="text-muted">El nuevo juego se grabó correctamente en la base de datos!<i class="fa fa-smile-o"></i></p>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-3">
+  </div>
+  <div class="col-md-6">
+    <div class="the-box">
+    <h4 class="small-title">Nuevo Juego</h4>
+      <form role="form">
+        <div class="form-group">
+        <label>Nombre</label>
+        <input type="text" ng-model="game.name" class="form-control">
+        </div>
+        <div class="form-group">
+        <label>Código</label>
+        <input type="number" ng-model="game.code" class="form-control">
+        </div>
+        <div class="form-group">
+        <label>Soporte</label>
+        <select ng-model="game.support" class="form-control">
+          <option value="disk">Disco</option>
+          <option value="digital">Digital</option>
+        </select>
+        </div>
+        <div class="form-group">
+        <label>Plataforma</label>
+        <select ng-model="game.platform" class="form-control">
+          <option value="ps">PS</option>
+          <option value="ps2">PS2</option>
+          <option value="ps3">PS3</option>
+          <option value="pc">PC</option>
+          <option value="xbox">XBOX</option>
+        </select>
+        </div>
+        <button type="submit" ng-click="save()" class="btn btn-danger"><i class="fa fa-sign-in"></i> {{buttonText}}</button>
+      </form>
+    </div><!-- /.the-box -->
+  </div>
+  <div class="col-md-3">
+  </div>
+</div>

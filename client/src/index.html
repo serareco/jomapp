@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html ng-app="ngBoilerplate" ng-controller="AppCtrl" lang="es">
+  <head>
+    <meta charset="utf-8">
+    <title ng-bind="pageTitle"></title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- compiled CSS --><% styles.forEach( function ( file ) { %>
+    <link rel="stylesheet" type="text/css" href="<%= file %>" /><% }); %>
+    <!-- compiled JavaScript --><% scripts.forEach( function ( file ) { %>
+    <script type="text/javascript" src="<%= file %>"></script><% }); %>
+  </head>
+  <body class="tooltips">
+    <div class="wrapper">
+      <!-- BEGIN TOP NAV -->
+      <div class="top-navbar">
+        <div class="top-navbar-inner">
+          <!-- Begin Logo brand -->
+          <div class="logo-brand">
+            <a href="index.html"><img src="assets/img/joma-logo-primary.png" alt="Joma logo"></a>
+          </div><!-- /.logo-brand -->
+          <!-- End Logo brand -->
+          <div class="top-nav-content">
+            <!-- Begin button sidebar left toggle -->
+            <div class="btn-collapse-sidebar-left">
+              <i class="fa fa-bars"></i>
+            </div><!-- /.btn-collapse-sidebar-left -->
+            <!-- End button sidebar left toggle -->
+            <!-- Begin button nav toggle -->
+            <div class="btn-collapse-nav" data-toggle="collapse" data-target="#main-fixed-nav">
+              <i class="fa fa-plus icon-plus"></i>
+            </div><!-- /.btn-collapse-sidebar-right -->
+            <!-- End button nav toggle -->
+            <!-- Begin user session nav -->
+            <ul class="nav-user navbar-right">
+              <li class="dropdown">
+                <a href="#fakelink" class="dropdown-toggle" data-toggle="dropdown">
+                <img src="assets/img/avatar/avatar.jpg" class="avatar img-circle" alt="Avatar">
+                Hola, <strong>Sergio Areco</strong>
+                </a>
+                <ul class="dropdown-menu square primary margin-list-rounded with-triangle">
+                <li><a href="#fakelink">Cuenta</a></li>
+                <li><a href="#fakelink">Lock screen</a></li>
+                <li><a href="#fakelink">Salir</a></li>
+                </ul>
+              </li>
+            </ul>
+            <!-- End user session nav -->
+            <!-- Begin Collapse menu nav -->
+            <div class="collapse navbar-collapse" id="main-fixed-nav">
+              <!-- Begin nav search form 
+              <form class="navbar-form navbar-left" role="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" ng-model="searchText" id="searchText" placeholder="Buscar">
+                </div>
+                <div class="form-group">
+                  <a type="button" ng-click="search();" class="form-control btn btn-info" >&nbsp;<i class="fa fa-sign-in"></i>&nbsp;</a>
+                </div>
+              </form>-->
+              <!-- End nav search form -->
+            </div><!-- /.navbar-collapse -->
+            <!-- End Collapse menu nav -->
+          </div><!-- /.top-nav-content -->
+        </div><!-- /.top-navbar-inner -->
+      </div><!-- /.top-navbar -->
+      <!-- END TOP NAV -->
+      <!-- BEGIN SIDEBAR LEFT -->
+      <div class="sidebar-left sidebar-nicescroller">
+        <ul class="sidebar-menu">
+          <li>
+            <a href="#fakelink">
+              <i class="fa fa-film icon-sidebar"></i>
+              <i class="fa fa-angle-right chevron-icon-sidebar"></i>
+              Películas
+              </a>
+            <ul class="submenu">
+              <li><a ui-sref="film" >Nueva</a></li>
+              <!--
+              <li><a href="#fakelink">Importar</a></li>
+              <li><a href="#fakelink">Exportar</a></li>
+              -->
+            </ul>
+          </li>
+          <li>
+            <a href="#fakelink">
+              <i class="fa fa-gamepad icon-sidebar"></i>
+              <i class="fa fa-angle-right chevron-icon-sidebar"></i>
+              Juegos
+              </a>
+            <ul class="submenu">
+              <li><a ui-sref="game">Nuevo</a></li>
+              <!--
+              <li><a href="#fakelink">Importar</a></li>
+              <li><a href="#fakelink">Exportar</a></li>
+              -->
+            </ul>
+          </li>
+          <li>
+            <a href="#fakelink">
+              <i class="fa fa-money icon-sidebar"></i>
+              <i class="fa fa-angle-right chevron-icon-sidebar"></i>
+              Productos
+              </a>
+            <ul class="submenu">
+              <li><a ui-sref="product">Nuevo</a></li>
+              <!--
+              <li><a href="#fakelink">Importar</a></li>
+              <li><a href="#fakelink">Exportar</a></li>
+              -->
+            </ul>
+          </li>
+          <li>
+            <a ui-sref="list">
+              <i class="fa fa-search icon-sidebar"></i>
+              Búsqueda
+              </a>
+          </li>
+        </ul>
+      </div><!-- /.sidebar-right-heading -->
+      <!-- END SIDEBAR RIGHT HEADING -->
+      
+      <!-- BEGIN PAGE CONTENT -->
+      <div class="page-content">
+        <div class="container-fluid"> 
+          <div class="row">
+            <div class="col-md-12">&nbsp;</div>
+          </div>   
+          <div ui-view="main"></div>
+        </div><!-- /.container-fluid -->
+        
+        <!-- BEGIN FOOTER -->
+        <footer>&copy; 2014 <a href="#fakelink">Sergio Areco</a><br />Design by <a href="http://isohdesign.com" target="_blank">ids</a>. Purchase this item at <a href="http://goo.gl/wSCjxD" target="_blank">Themeforest</a>
+        </footer>
+        <!-- END FOOTER -->
+
+      </div><!-- /.page-content -->
+    </div><!-- /.wrapper -->
+    <!-- BEGIN BACK TO TOP BUTTON -->
+    <div id="back-top">
+      <a href="#top"><i class="fa fa-chevron-up"></i></a>
+    </div>
+    <!-- END BACK TO TOP -->
+  </body>
+</html>
