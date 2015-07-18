@@ -28,11 +28,15 @@ angular.module( 'ngBoilerplate.game', [
     $scope.buttonText = "Guardando...";
     
     if($scope.game!==undefined){
+        var d = new Date();
+        var utc = d.getTime() + (d.getTimezoneOffset() * 60000);
+        var nd = new Date(utc + (3600000*(-3)));
+        
+        $scope.game.dateInsert = nd;
         Games.save($scope.game);
         $scope.buttonText = "Nuevo Juego";
         $scope.game = game;
         $scope.show = true;
-
     }
   };
 

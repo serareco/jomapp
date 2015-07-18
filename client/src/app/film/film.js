@@ -20,15 +20,21 @@ angular.module( 'ngBoilerplate.film', [
 }])
 
 .controller( 'FilmCtrl', function FilmCtrl( $scope, Films) {
+  $scope.show = false;
+  $scope.buttonText = "Nueva Película";
 
   $scope.save = function() {
     var film = {};
+    $scope.buttonText = "Guardando...";
+    
     if($scope.film!==undefined){
-        film=$scope.film;
-        Films.save(film);
+        $scope.film.dateInsert = new Date();
+        Films.save($scope.film);
+        $scope.buttonText = "Nueva Película";
+        $scope.film = film;
+        $scope.show = true;
     }
   };
-
 })
 
 ;
